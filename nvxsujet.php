@@ -16,16 +16,19 @@
 
         <main>
 <section>
+    <form method="post">
 <?php
+ if (isset($_SESSION['login'])) 
+ {
 $connexion = mysqli_connect("localhost", "root", "", "forum");
 $sql = 'SELECT auteur, titre, date FROM sujets WHERE id_topics="'.$_GET['id_topics'].'" ';
-$req = mysqli_query($connexion, $sql);
+$sql2 = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
+$req = mysqli_query($connexion, $sql2);
 $req2 = mysqli_fetch_assoc($req);
-
 ?>
 
-<form method="post">
-		<input type="text" value=<?php echo $req2['auteur'];?>  name="auteur" >
+
+		<input disabled type="text" value=<?php echo $req2['login'];?>  name="auteur" >
 		<input  required placeholder="Titre" type="text" name="titre" size="50">
 		<textarea required placeholder="Votre message" name="message"></textarea>
 		<input type="hidden" name="topic" value="<?php echo $_GET['id_topics'];?>">
@@ -44,7 +47,9 @@ if(isset($_POST["go"]))
   $query = mysqli_query($connexion, $sql);
   header('Location: topic.php');
 
-}
+}} else {
+	echo "<p> vous n'avais pas accé(e) a cette page </p>";
+}		
 ?>
     </section>
 </main>

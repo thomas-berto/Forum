@@ -25,7 +25,7 @@ $sql = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
 $req = mysqli_query($connexion, $sql);
 $req2 = mysqli_fetch_assoc($req);
                 ?>
-        <input type="text"  name="auteur" placeholder="auteur"  style='text-transform:uppercase' value="<?php echo $req2['login']; ?>" >
+        <input type="text" disabled name="auteur" placeholder="auteur"  value="<?php echo $req2['login']; ?>" >
 		<input  required type="text" name="titre" size="50" placeholder="titre">
 		<input type="submit" name="go" value="Poster">
 	</form>
@@ -40,9 +40,12 @@ if(isset($_POST["go"]))
  VALUES (NULL,'$auteur', '$titre',CURRENT_TIMESTAMP())";  
   $query = mysqli_query($connexion, $requete);
 
-  header('Location: connexion.php');
+  header('Location: index.php');
 }
-			}
+
+}else {
+	echo "<p> vous n'avais pas accé(e) a cette page </p>";
+}		
 ?>
 </section>
 
