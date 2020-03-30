@@ -63,6 +63,8 @@ $dataa = mysqli_fetch_array($req1);
 	echo $data['description'];
 	echo '</td><td>';
     echo $data['date'];
+    
+
     }
 	     
     	?>
@@ -70,7 +72,7 @@ $dataa = mysqli_fetch_array($req1);
 
  
 	<?php
-  echo '<p><a href="nvxsujet.php?id_topics=' , $data['id_topics'] , '"> Creer sujet</a>  ' ;                 
+  echo '<p><a href="nvxsujet.php?id_topics=' , $_GET['id_topics'] , '"> Creer sujet</a>  ' ;                 
                
 
 }

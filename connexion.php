@@ -29,18 +29,12 @@
 				<section> 
 					<article class="box">
 				<form class="formu" method="post">
-						<div class="titre">
 						<legend>Connexion</legend>
-					</div>
-						<div class="input-container">
                         <label for="pseudo">Pseudo :</label>
                         <input type="text" name="login" placeholder="login"required/>
                         <label for="password">Mot de Passe :</label>
 						<input type="password" name="pass"  placeholder="mot de passe"required/>
-						<div class="btn">
 						<input type="submit" value="Connexion" name="Connexion"required/>
-					</div>
-				</div>
 			</article>
 						
 					
@@ -74,6 +68,10 @@ if(isset($_POST["Connexion"]))
     header('Location: index.php');
     
     }
+else{
+    echo '*Mot de passe ou login incorrect';	
+	
+}
 
   }
 }

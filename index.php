@@ -14,14 +14,8 @@
 </ul>
  </nav>
 </header>
-<main>
-		
-				<section> 
-	<p>			<a href="nvxtopic.php">Insérer un topic</a>
-</p>
-
-<?php
-
+<main>	<section> 
+	<?php	
 $connexion = mysqli_connect("localhost", "root", "", "forum");
 $sql = "SELECT id_topics, auteur, titre, date FROM topics ORDER BY date DESC";
 $req = mysqli_query($connexion,$sql);
@@ -53,11 +47,26 @@ else {
 	echo $data['date'];
 
 	                                         }
-	     }
+		 }
+		
 	?>
 	</td></tr></table>
+	<?php
 	
-</section>
+	if (isset($_SESSION['login'])) 
+ {
+$login = $_SESSION['login'];
+$sql2 = "SELECT *  FROM utilisateurs WHERE login='$login'";
+$req2= mysqli_query($connexion,$sql2);
+$dataa =  mysqli_fetch_array($req2);
+echo '<p><a href="nvxtopic.php?grade=' , $dataa['grade'] , '">Insérer un topic</a></p></section>';
+ }
+ else 
+ echo '</section>'
+
+
+?>
+
 </main>
 <footer>
 
