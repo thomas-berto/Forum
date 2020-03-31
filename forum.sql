@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 30 mars 2020 à 01:19
+-- Généré le :  mar. 31 mars 2020 à 23:52
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -66,17 +66,17 @@ CREATE TABLE IF NOT EXISTS `sujets` (
   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `id_topics` int(6) NOT NULL,
   PRIMARY KEY (`id_sujets`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `sujets`
 --
 
 INSERT INTO `sujets` (`id_sujets`, `auteur`, `titre`, `description`, `date`, `id_topics`) VALUES
-(24, 'pape', 'ligue 1', 'vvvvvvvv', '2020-03-30 02:50:30', 3),
 (9, 'PAPE', 'LDC', 'discussion consacreer a la plus grande competition europeen', '2020-03-28 19:38:59', 3),
 (10, 'PAPE', 'ligue 1', 'sujet dedier a la ligue 1', '2020-03-28 19:47:15', 3),
-(20, 'pape', 'Festival de Canne', 'forum dedier au 21em festival', '2020-03-30 02:25:52', 5);
+(47, 'ines', 'Serie A', 'tout sur le championnat italien ', '2020-03-30 22:38:01', 3),
+(46, 'pape', 'OM', 'FORUM SUR LE PLUS GRAND CLUB MONDE ET EUROPE POURTOUJOUR TOUJOUR', '2020-03-30 14:32:44', 3);
 
 -- --------------------------------------------------------
 
@@ -91,16 +91,16 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `titre` text NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_topics`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `topics`
 --
 
 INSERT INTO `topics` (`id_topics`, `auteur`, `titre`, `date`) VALUES
-(3, 'PAPE', 'FOOT', '2020-03-26 16:22:00'),
-(5, 'pape', 'cinema', '2020-03-26 22:39:51'),
-(6, 'pape', 'Finance', '2020-03-26 22:40:15');
+(3, 'thomas', 'FOOT', '2020-03-26 16:22:00'),
+(5, 'thomas', 'cinema', '2020-03-26 22:39:51'),
+(6, 'ines', 'Finance', '2020-03-26 22:40:15');
 
 -- --------------------------------------------------------
 
@@ -113,19 +113,24 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `sexe` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `localisation` varchar(255) NOT NULL,
   `grade` int(11) NOT NULL DEFAULT 3,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `login`, `password`, `grade`) VALUES
-(8, 'pape', '54cf1edf1143872699c8b24cfc4bf05ead9e0365', 3),
-(10, 'thomas', 'e9db499e13ac90573163837d2fb1fc9f85402d6d', 1),
-(11, 'ines', '9c7478e0ce3e1d701ffebc2eb29fce4958c23fdd', 2),
-(14, 'tommy', '488e399ca964e714552c654dd63d032547705816', 3);
+INSERT INTO `utilisateurs` (`id`, `login`, `password`, `nom`, `prenom`, `sexe`, `email`, `localisation`, `grade`) VALUES
+(8, 'pape', '54cf1edf1143872699c8b24cfc4bf05ead9e0365', '', '', '', '', '', 3),
+(10, 'thomas', 'e9db499e13ac90573163837d2fb1fc9f85402d6d', '', '', '', '', '', 1),
+(11, 'ines', '9c7478e0ce3e1d701ffebc2eb29fce4958c23fdd', '', '', '', '', '', 2),
+(20, 'toto', '70e21878d268fa8f82817f9278f8bae0fb108950', 'rina', 'toto', 'Homme', 'thomasberto21@gmail.com', 'marseille', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

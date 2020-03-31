@@ -6,8 +6,10 @@ if (isset($_SESSION['login'])):
 
 <li><a href="index.php">Acceuil</a></li>
  <li><a href="topic.php">topic</a></li>
- <li><a href="nvxtopic.php">admin</a></li>
-
+ 
+ <?php echo'  
+ <li><a href="profil.php?id=' , $_SESSION['id'] , '">profil</a></li>'
+?>   
 <li>
         <form action="index.php" method="post">
             <input type="submit" name='deconnexion' class="deco" value="deconnexion">

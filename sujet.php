@@ -48,7 +48,7 @@ while ($data = mysqli_fetch_array($req)) {
 
 		<div class="container">
 		 				
-      <p class="id"><?php echo $data['auteur'];?></p>
+      <p class="id"><?php echo "<a href='profil.php?m=3&action=consulter'> $data['auteur'] </a> ";?></p>
          <p class="texte"><?php echo $data['message'];?>	</p>	
          <span class="time"><?php echo $data['date'];?></span>
 			</div>
