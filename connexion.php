@@ -31,7 +31,7 @@
 				<form class="formu" method="post">
 						<legend>Connexion</legend>
                         <label for="pseudo">Pseudo :</label>
-                        <input type="text" name="login" placeholder="login"required/>
+                        <input type="text" name="login"  placeholder="login"required/>
                         <label for="password">Mot de Passe :</label>
 						<input type="password" name="pass"  placeholder="mot de passe"required/>
 						<input type="submit" value="Connexion" name="Connexion"required/>
