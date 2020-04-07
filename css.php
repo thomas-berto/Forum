@@ -1,8 +1,10 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: transparent; }
+    background-color: transparent;
+
 }
+
 main{
 	display: flex;
 	flex-direction: column;
@@ -10,7 +12,6 @@ main{
     font-size: 17px;
     padding: 2%;
 }
-
 
 /* HEADER FOOTER */
 header{
@@ -102,19 +103,6 @@ h2{text-align: center;}
   background-color: rgba(70, 35, 35, 0.747);
   padding: 2%;
   margin: 2%;
-}
-
-/* profil */
-.press
-{
-  border: thick double #fff4f4fd;
-  border-radius: 30px;
-  text-align: center;
-  background-color: #83a6e7;
-  opacity: 70%;
-  padding: 2%;
-  margin: 2%;
-
 
 }
 /* table */
@@ -150,7 +138,6 @@ thead {
 
     color: #6495ed;
   }
-/* SUJET */
 
 .container {
     border: 2px solid #dedede;
@@ -201,30 +188,18 @@ font-family: fantasy;
   .id
   {
     float: left;
-    color: #6495ed;
-    font-size: 3em;
-    text-transform: uppercase;
-font-family: monospace;  }
+    color: rgb(14, 12, 12);
+    font-size: 2em;
+
+  }
   
   .ido
   {float: right;
-    color: #6495ed;
-    font-size: 3em;
-    text-transform: uppercase;
-    font-family: monospace;
-  }
+    color: rgb(14, 12, 12);
+    font-size: 2em;
 
-  .texte
-  { 
-    font-size: 1em;
-    float:center;
-    justify-content: space-around;
-    }
-    .text{
-    font-size: 1em;
-    float:center;
-    justify-content: space-around;
-    }
+  }
+  
   .time {
     float: right;
     color: #aaa;
@@ -273,25 +248,5 @@ width:450px;
      animation: titre .75s ease-out infinite;
      text-shadow: 0px 0px 5px #004D98;
       }
-    h3
-    {
-      text-align: center;
-      font-size: 13px;
-    }
-    .bug{
-      text-align: center;
-      animation: bao .75s ease-out infinite;
-      text-shadow: 0px 0px 5px #004D98;
-       }
-       
-       @keyframes bao {
-         from {
-           text-shadow:0px 0px 10px rgb(247, 248, 250),
-             0px 0px 10px rgb(219, 223, 226), 
-             0px 0px 25px rgb(248, 250, 252),
-             0px -10px 100px #A50044,
-             0px -10px 100px #A50044;
-         }
-       }
-     }
+      
      

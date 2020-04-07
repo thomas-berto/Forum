@@ -24,24 +24,28 @@
 			{
 				header('Location: index.php');
 			} 
+			
 			?>
 		
-				<section> 
-					<article class="box">
-				<form class="formu" method="post">
-						<legend>Connexion</legend>
+		<section> 
+			<article class="box">
+				<form class="forme" method="post">
+					<h1>Connexion</h1>
+					<fieldset> <legend>Connecte Toi </legend>
                         <label for="pseudo">Pseudo :</label>
                         <input type="text" name="login"  placeholder="login"required/>
                         <label for="password">Mot de Passe :</label>
 						<input type="password" name="pass"  placeholder="mot de passe"required/>
+					</fieldset>
 						<input type="submit" value="Connexion" name="Connexion"required/>
-			</article>
-						
 					
 				</form>
-</section>
-</main>
 
+			 </article>
+		</section>	
+
+
+		<section>
 <?php
 
 if(isset($_POST["Connexion"]))
@@ -53,34 +57,33 @@ if(isset($_POST["Connexion"]))
 	$connexion = mysqli_connect("localhost", "root", "", "forum");
 	$requete = "SELECT * FROM utilisateurs WHERE login='$login'";
 	$query=mysqli_query($connexion,$requete);
-	$resultat=mysqli_fetch_all($query);
+	$resultat = mysqli_fetch_array($query);
 
-	
-  if(!empty($resultat))
-  {
-
-    if ($password == $resultat[0][2])
+	    if ($login == $resultat["login"] && $password == $resultat["password"])
     {
     
-      $_SESSION['id']=$resultat[0][0];
-      $_SESSION['login']=$resultat[0][1];
-    mysqli_close($connexion);
-    header('Location: index.php');
-    
-    }
-else{
-    echo '*Mot de passe ou login incorrect';	
-	
-}
+	  $_SESSION["id"]=$resultat["id"];
+	  $_SESSION['login']=$resultat["login"];
 
-  }
+    mysqli_close($connexion);
+     header('Location: index.php');  
+    
+	}
+else{
+    echo '<p class="bug">*Login ou Mot de passe incorrect</p>';	
+	
+}  
+
 }
 
 ?>
 
+
+        </section>
+</main>
 <footer>
 				
-				Copyright © 2020 All rights reserved
+<?php include('footer.php') ?>
 	</footer>	
 </body>
 </html>

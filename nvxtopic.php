@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="index.css"/>
-		<title>index</title>
+		<title>nvxtopics</title>
 	</head>
 	<body>
 		<header>
@@ -22,6 +22,7 @@
  {
 	 echo "<p>vous n'avez pas accéé a cette page</p>";
  }
+ else{
  if (isset($_SESSION['login'])) 
       {
         $login= $_SESSION['login'];
@@ -34,12 +35,15 @@
 	?>
 
 <section>
-	<form method="post">
-	
-
-        <input type="text" disabled name="auteur" placeholder="auteur"  value= <?php echo $login;?> />
-		<input  required type="text" name="titre" size="50" placeholder="titre">
-		<input type="submit" name="go" value="Poster">
+	<form  class="forme"method="post">
+		<h1>Nouveau topic</h1>
+		<fieldset>
+			 <legend>TOPIC</legend>
+			 <input type="text" disabled name="auteur" placeholder="auteur"  value= <?php echo $login;?> />
+			 <input  required type="text" name="titre" size="50" placeholder="titre"/>
+			   <input type="submit" name="go" value="Poster"/>
+	    </fieldset>
+      
 	</form>
 <?php
  
@@ -52,8 +56,7 @@
   $query = mysqli_query($connexion, $requete);
 
 
- }	}
- echo $requete;
+ }	}}
  ?>
 </section>
 
@@ -61,6 +64,7 @@
 <footer>
 
 
+<?php include('footer.php') ?>
 
 </footer>	
 </body>
