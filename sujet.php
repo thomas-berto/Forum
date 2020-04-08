@@ -78,7 +78,7 @@
 								<article class="container">
 
 								<p class="id"><?php echo $data['auteur'];?></p>
-									<p class="texte"><?php echo $data['message'];?>
+									<p class="texte"><?php echo $data['message'];?></p>
 									<?php
 								if (isset($_SESSION['login']))
 								{
@@ -105,7 +105,7 @@
 								?>
 								<article class='containe'>
 									<p class='ido'><?php echo $data['auteur'];?></p>
-									<p class='text'><?php echo $data['message'];?>
+									<p class='text'><?php echo $data['message'];?></p>
 									<?php
 									if (isset($_SESSION['login']))
 									{
@@ -118,11 +118,12 @@
 										 <img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/face-vomiting.png"
 										width="15px"/>
 										<?php echo $aimepas; ?></a></p>
-									<span class='tim'><?php echo $data['date'];?></span>
+								
 								
 										<?php
 			                        }				
-										?>
+										?>	
+										<span class='tim'><?php echo $data['date'];?></span>
 										</article>
 								        <?php
 	                        }

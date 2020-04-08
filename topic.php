@@ -33,7 +33,7 @@
 		  				<article>
 							  <table>
 								   <thead>
-										<td> Topic</td>
+										<td> Sujet</td>
 										<td>Auteur</td>
 										<td> description</td>
 										<td>Date de creation </td>

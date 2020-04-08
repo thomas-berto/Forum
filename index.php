@@ -76,7 +76,8 @@ $login = $_SESSION['login'];
 $sql2 = "SELECT *  FROM utilisateurs WHERE login='$login'";
 $req2= mysqli_query($connexion,$sql2);
 $dataa =  mysqli_fetch_array($req2);
-echo '<p><a href="nvxtopic.php?grade=' , $dataa['grade'] , '">Insérer un topic</a></p></section>';
+echo '<p><a href="nvxtopic.php?grade=' , $dataa['grade'] , '">Insérer un topic</a></p>';
+ echo'</p><a href="admin.php">supprimer topic</a></p></section>';
  }
  else 
  echo '</section>'
