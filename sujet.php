@@ -78,11 +78,27 @@
 								<article class="container">
 
 								<p class="id"><?php echo $data['auteur'];?></p>
-									<p class="texte"><?php echo $data['message'];?></p>
+								<p class="texte"><?php echo $data['message'];?></p>
+								<p>
 									<?php
 								if (isset($_SESSION['login']))
 								{
+									$requete="SELECT grade from utilisateurs WHERE login='$login'";
+									$query=mysqli_query($connexion, $requete);
+									$array=mysqli_fetch_array($query);
+									if($array['grade']==2)
+									{
+
 									?>
+
+									<a href="sup.php?id_reponse=<?php echo $idr; ?>">
+									<img src="https://img-19.ccm2.net/oVZrcaNmsf63r8-S5MfNmTSDff4=/256x/563ebf46e4d649c0a1ba94c57065c03b/ccm-faq/0-sfQHN6W9-corbeille-1-s-.png"
+									width="15px"/></a>
+									
+									<?php
+										 }
+									?>
+									
 									<a href="like.php?id_reponse=<?php echo $idr; ?> & like=1">
 									<img src="https://ih1.redbubble.net/image.435629281.8307/flat,128x128,075,t-pad,128x128,f8f8f8.jpg"
 									width="15px"/>
@@ -90,7 +106,8 @@
 									<a href="like.php?id_reponse=<?php echo $idr; ?> & like=2">
 									<img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/face-vomiting.png"
 									width="15px"/>
-									<?php echo $aimepas; ?></a></p>
+									<?php echo $aimepas; ?></a>
+								</p>
 									<?php
 								}
 								 ?>
@@ -106,11 +123,26 @@
 								<article class='containe'>
 									<p class='ido'><?php echo $data['auteur'];?></p>
 									<p class='text'><?php echo $data['message'];?></p>
+									<p>
 									<?php
 									if (isset($_SESSION['login']))
 									{
+										$requete="SELECT grade from utilisateurs WHERE login='$login'";
+										$query=mysqli_query($connexion, $requete);
+										$array=mysqli_fetch_array($query);
+										if($array['grade']==2)
+										{
+
 										?>
-										 <p><a href="like.php?id_reponse=<?php echo $idr; ?> & like=1">
+
+										<a href="sup.php?id_reponse=<?php echo $idr; ?>">
+										<img src="https://img-19.ccm2.net/oVZrcaNmsf63r8-S5MfNmTSDff4=/256x/563ebf46e4d649c0a1ba94c57065c03b/ccm-faq/0-sfQHN6W9-corbeille-1-s-.png"
+										width="15px"/></a>
+
+										 <?php
+										 }
+										 ?>
+										 <a href="like.php?id_reponse=<?php echo $idr; ?> & like=1">
 										 <img src="https://ih1.redbubble.net/image.435629281.8307/flat,128x128,075,t-pad,128x128,f8f8f8.jpg"
 										 width="15px"/>
 										 <?php echo $aime; ?></a>

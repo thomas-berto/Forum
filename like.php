@@ -32,15 +32,16 @@ $utilisateur = $like["id"];
  $query = mysqli_query($connexion, $insert);
  }
 
-  elseif ($select3["aime"] == 1 && $aime == 1)  { 
+  elseif ($select3["aime"] == 1 && $aime == 1) 
+   { 
 
-    $delete = "DELETE FROM likes WHERE  id_reponse = '$reponse' AND id_utilisateur = '$utilisateur' ";
-  $resultat = mysqli_query($connexion, $delete); 
-  mysqli_close($connexion);	
-                                    }
+     $delete = "DELETE FROM likes WHERE  id_reponse = '$reponse' AND id_utilisateur = '$utilisateur' ";
+    $resultat = mysqli_query($connexion, $delete); 
+    mysqli_close($connexion);	
+  }
 
 elseif ($aime == 2 && !$select3 )
- {  $insert = "INSERT INTO likes (id_like, aime, id_reponse, id_utilisateur) VALUES (NULL, $aime, $reponse, $utilisateur)";
+{  $insert = "INSERT INTO likes (id_like, aime, id_reponse, id_utilisateur) VALUES (NULL, $aime, $reponse, $utilisateur)";
  $query = mysqli_query($connexion, $insert);
  }
 
